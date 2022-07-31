@@ -1,18 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  background: #212121
+  background: #212121;
 }
 
 h1 {
-  font-family: 'Alegreya',
-serif
+  font-family: "Alegreya", serif;
 }
 
 h2 {
@@ -23,50 +21,50 @@ h2 {
 }
 
 h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8%;
-  background: #AC8E60;
+  background: #ac8e60;
   height: 0.15rem;
   z-index: 1;
 }
 
-.trip {
+.gallery {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: 150px 100px 100px 100px;
   margin-top: 2.5rem;
 }
 
-.trip div img {
+.gallery div img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.trip div:nth-child(1) {
+.gallery div:nth-child(1) {
   grid-row: 1/2;
 }
 
-.trip div:nth-child(2) {
-  grid-row: 1/4
-}
-
-.trip div:nth-child(4) {
-  grid-row: 2/4;
-}
-
-.trip div:nth-child(5) {
+.gallery div:nth-child(2) {
   grid-row: 1/4;
 }
 
-.trip div:nth-child(6) {
+.gallery div:nth-child(4) {
+  grid-row: 2/4;
+}
+
+.gallery div:nth-child(5) {
+  grid-row: 1/4;
+}
+
+.gallery div:nth-child(6) {
   grid-row: 2/4;
 }
 
 .footer {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
 }
 
 @media screen and (max-width: 990px) {

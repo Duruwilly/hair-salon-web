@@ -1,82 +1,94 @@
-import React, { useState } from 'react'
-import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom'
-import { FaTimes } from 'react-icons/fa';
-import NavbarMenu from './NavbarMenu'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link, NavLink } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
+import NavbarMenu from "./NavbarMenu";
 
 const DropdownContainer = styled.div`
-position: fixed;
-z-index: 999;
-width: 60%;
-height: 100%;
-background: #212121;
-display: grid;
-align-items: center;
-top: 0;
-right: 0;
-transition: 0.9s ease-in-out;
-opacity: ${({ isOpen}) => (isOpen ? '1' : '0')};
-right: ${({ isOpen}) => (isOpen ? '0' : '-100%')};
+  position: fixed;
+  z-index: 999;
+  width: 60%;
+  height: 100%;
+  background: #212121;
+  display: grid;
+  align-items: center;
+  top: 0;
+  right: 0;
+  transition: 0.9s ease-in-out;
+  opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
+  right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 
-@media screen and (min-width:850px) {
-  display: none;
-}
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
 `;
 
 const Icon = styled.div`
-position: absolute;
-top: 1.2rem;
-right: 1.5rem;
-background: transparent;
-font-size: 2rem;
-cursor: pointer;
-outline: none;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
 `;
 
-const CloseIcon = styled(FaTimes)
-`
-color: #fff;
+const CloseIcon = styled(FaTimes)`
+  color: #fff;
 `;
 
 const DropdownMenu = styled.div`
-display: grid;
-grid-template-columns: 1fr;
-gap: 1rem;
-text-align: center;
-margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 4rem;
 `;
 
 const MenuLink = styled(Link)`
-display: flex;
-align-items: center;
-justify-content: center;
-color: #fff;
-font-size: 1.5rem;
-text-decoration: none;
-list-style: none;
-cursor: pointer;
-transition: 0.9 ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+  transition: 0.9 ease-in-out;
 
-&:hover {
-  color: #AC8E60;
-}
+  &:hover {
+    color: #ac8e60;
+  }
 `;
 
-const Dropdown = ({ isOpen, toggle, about, services, pricing, scrollToSection }) => {
+const Dropdown = ({
+  isOpen,
+  toggle,
+  about,
+  services,
+  pricing,
+  scrollToSection,
+}) => {
   return (
     <DropdownContainer isOpen={isOpen}>
-        <Icon onClick={toggle}>
-          <CloseIcon />
-        </Icon>
-          <DropdownMenu onClick={toggle}>
-            <MenuLink to='/'>home</MenuLink>
-            <MenuLink to='/' onClick={() => scrollToSection(about)}>about us</MenuLink>
-            <MenuLink to='/' onClick={() => scrollToSection(services)}>services</MenuLink>
-            <MenuLink to='booking'>booking</MenuLink>
-            <MenuLink to='/' onClick={() => scrollToSection(pricing)}>pricing</MenuLink>
-          </DropdownMenu>
+      <Icon onClick={toggle}>
+        <CloseIcon />
+      </Icon>
+      <DropdownMenu onClick={toggle}>
+        <MenuLink to="/">home</MenuLink>
+        <MenuLink to="/" onClick={() => scrollToSection(about)}>
+          about us
+        </MenuLink>
+        <MenuLink to="/" onClick={() => scrollToSection(services)}>
+          services
+        </MenuLink>
+        <MenuLink to="booking">booking</MenuLink>
+        <MenuLink to="/" onClick={() => scrollToSection(pricing)}>
+          pricing
+        </MenuLink>
+      </DropdownMenu>
     </DropdownContainer>
-  )
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;

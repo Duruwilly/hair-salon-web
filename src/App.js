@@ -59,6 +59,9 @@ function App() {
         />} 
         />
         <Route path='booking' element={<Booking />} />
+        <Route path='*' element={<main className='p-4 text-white'>
+          <p>sorry you seems to have entered an invalid url</p>
+        </main> } />
       </Routes>
       <Footer
         about={about}
