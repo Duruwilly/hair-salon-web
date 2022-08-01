@@ -1,7 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
+import { useGlobalContext } from "../context/ContextWrapper";
 import Contact from "./Contact";
 
-const Pricing = ({ pricing }) => {
+const Pricing = () => {
+  const { pricing } = useGlobalContext();
   return (
     <section
       className="flex justify-center pt-12 px-4 text-white"

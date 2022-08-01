@@ -41,23 +41,26 @@ const Booking = () => {
           <form ref={form} onSubmit={sendEmail} className="mt-8">
             <input
               type="text"
+              required
               placeholder="FullName"
               name="name"
               className={inputClass}
             />
             <input
               type="text"
+              required
               placeholder="Email"
               name="email"
               className={inputClass}
             />
             <input
               type="tel"
+              required
               name="phone"
               placeholder="Phone Numer"
               className={inputClass}
             />
-            <select name="services" className={inputClass}>
+            <select name="services" className={inputClass} required>
               <option value="">Select Service</option>
               <option value="male haircut">male haircut</option>
               <option value="female haircut">female haircut</option>
@@ -70,17 +73,19 @@ const Booking = () => {
               <option value="massage">massage</option>
               <option value="hair treatment">hair treatment</option>
             </select>
-            <select name="location" className={inputClass}>
+            <select name="location" className={inputClass} required>
               <option value="in-service">in-service</option>
               <option value="home service">home service</option>
             </select>
             <input
               type="datetime-local"
+              required
               name="date_time"
               className={inputClass}
             />
             <textarea
               name="message"
+              required
               placeholder="Message"
               className="h-36 my-2 mx-0 w-full p-3 border border-white block bg-transparent text-white focus:outline-none focus:bg-white focus:text-black placeholder-white"
             ></textarea>

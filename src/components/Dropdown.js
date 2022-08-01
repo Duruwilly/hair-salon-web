@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import NavbarMenu from "./NavbarMenu";
+import { useGlobalContext } from "../context/ContextWrapper";
 
 const DropdownContainer = styled.div`
   position: fixed;
@@ -37,7 +38,7 @@ const CloseIcon = styled(FaTimes)`
   color: #fff;
 `;
 
-const DropdownMenu = styled.div`
+const DropdownMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -45,7 +46,7 @@ const DropdownMenu = styled.div`
   margin-bottom: 4rem;
 `;
 
-const MenuLink = styled(Link)`
+const MenuLink = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,14 +62,8 @@ const MenuLink = styled(Link)`
   }
 `;
 
-const Dropdown = ({
-  isOpen,
-  toggle,
-  about,
-  services,
-  pricing,
-  scrollToSection,
-}) => {
+const Dropdown = () => {
+  const { isOpen, toggle, about, services, pricing, scrollToSection } = useGlobalContext()
   return (
     <DropdownContainer isOpen={isOpen}>
       <Icon onClick={toggle}>
@@ -76,14 +71,14 @@ const Dropdown = ({
       </Icon>
       <DropdownMenu onClick={toggle}>
         <MenuLink to="/">home</MenuLink>
-        <MenuLink to="/" onClick={() => scrollToSection(about)}>
+        <MenuLink onClick={() => scrollToSection(about)}>
           about us
         </MenuLink>
-        <MenuLink to="/" onClick={() => scrollToSection(services)}>
+        <MenuLink onClick={() => scrollToSection(services)}>
           services
         </MenuLink>
         <MenuLink to="booking">booking</MenuLink>
-        <MenuLink to="/" onClick={() => scrollToSection(pricing)}>
+        <MenuLink onClick={() => scrollToSection(pricing)}>
           pricing
         </MenuLink>
       </DropdownMenu>

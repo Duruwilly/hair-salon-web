@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import { BsInstagram, BsSnapchat, BsFacebook } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context/ContextWrapper";
 
-const Footer = ({ about, services, pricing, scrollToSection }) => {
+const Footer = () => {
+  const { about, services, pricing, scrollToSection } = useGlobalContext()
+
   return (
     <footer className=" bg-mobile-nav-bg text-white uppercase">
       <div className="p-5 flex items-center justify-between footer gap-4">
@@ -23,7 +26,7 @@ const Footer = ({ about, services, pricing, scrollToSection }) => {
             target="_blank"
             className="text-2xl bg-[#0a3b52] rounded-full p-2"
           >
-            <BsFacebook className="" />
+            <BsFacebook />
           </a>
           <a
             href="https://facebook.com/prince.duru.355"

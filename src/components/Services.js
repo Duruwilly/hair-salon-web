@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import servicesImg from "../assets/services.jpg";
+import { useGlobalContext } from "../context/ContextWrapper";
 
-const Services = ({ services }) => {
+const Services = () => {
+  const { services } = useGlobalContext();
   return (
     <section
       className="bg-main-secondary-bg flex justify-center px-4 pt-12 pb-6 relative"

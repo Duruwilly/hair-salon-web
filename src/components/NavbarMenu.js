@@ -1,7 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context/ContextWrapper";
 
-const NavbarMenu = ({ about, services, pricing, scrollToSection }) => {
+const NavbarMenu = () => {
+  const { about, services, pricing, scrollToSection } = useGlobalContext();
   const [activeTab, setActiveTab] = useState("tab1");
 
   const toggleTab = (index) => {

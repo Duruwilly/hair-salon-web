@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import aboutImg from "../assets/about-img.jpg";
+import { useGlobalContext } from "../context/ContextWrapper";
 import Subheader from "./Subheader";
 
-const About = ({ about }) => {
+const About = () => {
+  const { about } = useGlobalContext();
   return (
     <section
       className="flex justify-center pb-20 pt-12 px-4 text-white"
@@ -22,10 +24,10 @@ const About = ({ about }) => {
               we will make you leave looking astonished!
             </h1>
             <p className="text-sm">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor,
-              possimus? Autem, fuga asperiores. Cumque praesentium consectetur
-              eius asperiores quisquam dolores quos, iusto animi, corrupti
-              voluptas qui reprehenderit provident ducimus saepe.
+              With our mission of giving you the best look and leaving you to get
+              astonished, we have always meet that. We give the best service that is worth your money. We
+              have the best team that would meet and not just meet but beat your
+              expectation.
             </p>
             <div className="flex gap-11 mt-5 text-deco-text">
               <div className="">

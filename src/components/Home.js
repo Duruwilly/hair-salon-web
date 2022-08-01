@@ -7,15 +7,15 @@ import BookingAd from "./BookingAd";
 import Pricing from "./Pricing";
 import ScrollToTop from "./ScrollToTop";
 
-const Home = ({ about, services, pricing }) => {
+const Home = () => {
   return (
     <>
       <Hero />
-      <About about={about} />
-      <Services services={services} />
+      <About />
+      <Services />
       <Gallery />
       <BookingAd />
-      <Pricing pricing={pricing} />
+      <Pricing />
       <ScrollToTop />
     </>
   );
